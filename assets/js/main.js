@@ -115,3 +115,8 @@
 			});
 
 })(jQuery);
+
+function showModal(event, modalId, imgSrc) {
+    event.preventDefault();
+    ...
+}
