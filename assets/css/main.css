@@ -3222,6 +3222,7 @@ input, select, textarea {
 
 .modalThumbnail {
 	cursor: pointer;
+	width: 100%;
 }
 	
 /* The Modal (background) */
