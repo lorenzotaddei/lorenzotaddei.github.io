@@ -3219,6 +3219,10 @@ input, select, textarea {
 			}
 
 	}
+
+.modalThumbnail {
+	cursor: pointer;
+}
 	
 /* The Modal (background) */
 .modal {
