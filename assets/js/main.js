@@ -96,7 +96,7 @@
 	// Main Sections: Two.
 
 		// Lightbox gallery.
-			$window.on('load', function() {
+			/*$window.on('load', function() {
 
 				$('#two').poptrox({
 					caption: function($a) { return $a.next('h3').text(); },
@@ -112,10 +112,11 @@
 					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
 
-			});
+			});*/
 
 })(jQuery);
 
+<<<<<<< HEAD
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -136,3 +137,29 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+=======
+function showModal(event, modalId, imgSrc) {
+    event.preventDefault();
+
+}
+
+
+function openModal(modalID) {
+	modal = document.getElementById(modalID)
+	modal.style.display = "flex";
+}
+
+function closeAllModal() {
+	var modals = document.getElementsByClassName("modal");
+	for(i=0; i<modals.length; i++) {
+		modals[i].style.display = "none"
+	}
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target == modal) {
+	  modal.style.display = "none";
+	}
+  }
+>>>>>>> 50a73daccc6c36e471b46918b883e6849c34f066

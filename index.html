@@ -34,66 +34,92 @@
 						<p>Welcome to my website! I am a data analyst with a recent Marketing Analytics degree from Tilburg University. I have experience working in CRM contexts and am skilled in handling large and complex databases. My expertise also includes proficiency in using data visualization tools to effectively communicate findings and insights. I am excited to share my knowledge and experience with you, and I look forward to helping you with your data needs.<br />
 						<br />
 						This portfolio contains a selection of analytical projects that I have worked on, showcasing my skills in data analysis and interpretation. From data visualization to statistical analysis, these projects demonstrate my ability to turn data into actionable insights.</p>
-						<ul class="actions">
+						<!-- <ul class="actions">
 							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
+						</ul> -->
 					</section>
 
 				<!-- Two -->
 					<section id="two">
 						<h2>Recent Work</h2>
 						<div class="row">
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<!-- Trigger the Modal -->
-								<img id="myImg" src="images/fulls/01.jpg" alt="Snow" style="width:100%;max-width:300px">
-
-								<!-- The Modal -->
-								<div id="myModal" class="modal">
-
-								  <!-- The Close Button -->
-								  <span class="close">&times;</span>
-
-								  <!-- Modal Content (The Image) -->
-								  <img class="modal-content" id="img01">
-
-								  <!-- Modal Caption (Image Text) -->
-								  <div id="caption">text of the modal</div>
-								</div>								
-								
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
+								<img src="images/thumbs/01.jpg" alt="" class="modalThumbnail" onclick="openModal('modal1')"/>
+								<h3>Ultricies lacinia interdum 1</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal1" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 1<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/01.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
+							<!-- END MODAL BOX -->
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
+								<img src="images/thumbs/02.jpg" alt="" class="modalThumbnail" onclick="openModal('modal2')"/>
+								<h3>Ultricies lacinia interdum2</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal2" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 2<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/02.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
+							<!-- END MODAL BOX -->
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
+								<img src="images/thumbs/03.jpg" alt="" class="modalThumbnail" onclick="openModal('modal3')"/>
+								<h3>Ultricies lacinia interdum3</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal3" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 3<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/03.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
+							<!-- END MODAL BOX -->
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
+								<img src="images/thumbs/04.jpg" alt="" class="modalThumbnail" onclick="openModal('modal4')"/>
+								<h3>Ultricies lacinia interdum4</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal4" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 4<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/04.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
+							<!-- END MODAL BOX -->
 						</div>
 					</section>
 
-
-
-				<!-- Three -->
+				<!-- Three -->					
+					<section id="three">
+						<h3>Get In Touch</h3>
+						<p>Email<br>
+						<a href="MAILTO:lorenzo.taddei@outlook.it">lorenzo.taddei@outlook.it</a>
+						<p>Phone<br>
+						<a href="tel:+393333578520">+39 3333578520</a><br>
+						<a href="https://wa.me/00393333578520">WhatsApp</a>
+						
+				<!-- <!-- Three 
 					<section id="three">
 						<h2>Get In Touch</h2>
 						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
@@ -124,12 +150,14 @@
 									</li>
 									<li>
 										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">hello@untitled.tld</a>
+										<a href="MAILTO:lorenzo.taddei@outlook.it">lorenzo.taddei@outlook.it</a>
 									</li>
 								</ul>
 							</div>
 						</div>
-					</section>
+					</section> -->
+					
+					
 
 				<!-- Four -->
 				<!--
@@ -451,6 +479,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 			</div>
 
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
@@ -464,7 +493,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
-			</footer>
+			</footer> 
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
