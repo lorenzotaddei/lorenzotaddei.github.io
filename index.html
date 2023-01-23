@@ -43,51 +43,70 @@
 					<section id="two">
 						<h2>Recent Work</h2>
 						<div class="row">
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<!-- Trigger the Modal -->
-								<img id="myImg" src="images/fulls/01.jpg" alt="Snow" style="width:100%;max-width:300px">
-
-								<!-- The Modal -->
-								<div id="myModal" class="modal">
-
-								  <!-- The Close Button -->
-								  <span class="close">&times;</span>
-
-								  <!-- Modal Content (The Image) -->
-								  <img class="modal-content" id="img01">
-
-								  <!-- Modal Caption (Image Text) -->
-								  <div id="caption">text of the modal</div>
-								</div>								
-								
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
+								<a href="javscript:void(0)" class="image fit thumb" onclick="openModal('modal1')"><img src="images/thumbs/01.jpg" alt="" /></a>
+								<h3>Ultricies lacinia interdum 1</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal1" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 1<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/01.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
+							<!-- END MODAL BOX -->
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
+								<a href="javscript:void(0)" class="image fit thumb" onclick="openModal('modal2')"><img src="images/thumbs/02.jpg" alt="" /></a>
+								<h3>Ultricies lacinia interdum2</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal2" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 2<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/02.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
+							<!-- END MODAL BOX -->
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
+								<a href="javscript:void(0)" class="image fit thumb" onclick="openModal('modal3')"><img src="images/thumbs/03.jpg" alt="" /></a>
+								<h3>Ultricies lacinia interdum3</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal3" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 3<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/03.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
+							<!-- END MODAL BOX -->
+							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
+								<a href="javscript:void(0)" class="image fit thumb" onclick="openModal('modal4')"><img src="images/thumbs/04.jpg" alt="" /></a>
+								<h3>Ultricies lacinia interdum4</h3>
 								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<!-- Modal -->
+								<div id="modal4" class="modal">
+									<div class="modal-content">
+										<h2>Ultricies lacinia interdum 4<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<img src="images/thumbs/04.jpg" alt="" />
+										<p>Some text in the Modal...</p>
+										<p>Some text in the Modal...</p>
+									</div>
+								</div>
 							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
+							<!-- END MODAL BOX -->
 						</div>
 					</section>
 
@@ -124,7 +143,7 @@
 									</li>
 									<li>
 										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">hello@untitled.tld</a>
+										<a href="MAILTO:lorenzo.taddei@outlook.it">lorenzo.taddei@outlook.it</a>
 									</li>
 								</ul>
 							</div>
