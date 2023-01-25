@@ -39,30 +39,47 @@
 						</ul> -->
 					</section>
 
+
+
+
 				<!-- Two -->
 					<section id="two">
 						<h2>Analytics Work</h2>
 						<div class="row">
 							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<img src="images/thumbs/01.jpg" alt="" class="modalThumbnail" onclick="openModal('modal1')"/>
+								<img src="images/section2/clv1.jpg" alt="" class="modalThumbnail" onclick="openModal('modal1')"/>
 								<h3>Customer Lifetime Value in mobile gaming</h3>
 								<p>(SQL, RStudio)</p>
 								<!-- Modal -->
 								<div id="modal1" class="modal">
 									<div class="modal-content">
-										<h2>MSc thesis<br> Customer Lifetime Value prediction in mobile freemium games. The Introduction user information and game specific covariates<span class="close" onclick="closeAllModal()">&times;</span></h2>
-										<img src="images/thumbs/01.jpg" alt="" />
-										<p>Some text in the Modal...</p>
-										<p>Some text in the Modal...<br>
-										Other text</p>
+										<h2>MSc thesis<br> Latent attrition models in the mobile gaming industry. The role of RFM values and playing behaviours covariates in Customer Lifetime Value Predictions<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<p>This study, in collaboration with an international gaming company, explores new methodologies to predict customer future spending on mobile games. The game observed is a mobile freemium game, for privacy reasons neither the name of the game nor the data employed are not published. The predictor utilized in the study is the Pareto NBD, a latent attrition model, which estimates simultaneously two different processes of customers:<br><br>
+										-	Attrition (responsible for churn)<br>-	Transactional (models the number of purchases)<br><br>
+										The Standard version of the Pareto NBD employs only the RFM values for the whole customer base. These values are Recency (when the last purchase took place), Frequency (how many purchases the customer has done in the observed period), and Monetary (average amount of past transactions) values. The model performs a holdout split, and only employs the RFM values only in the Calibration period, and computes future spending predictions in the validation period. The image below summarizes this process.<br><br>
+										</p>
+										<img src="images/project1/holdoutsplit4.jpg" alt="" class="centerimg"/>
+										<p>The analysis takes into consideration a cohort of customers that made their first purchase on a certain week of the year, and their transactions are observed for the whole following year. The calibration period consists of the first four months of the year and the remaining ones correspond to the validation period. As the figure shows the predicted spendings in the holdout (or validation period) are then compared with the actual data, available in the dataset. This allows to asses the accuracy of the model and eventually claim whether including the covariates improve the predictions. <br><br>
+										<h2>Pareto NBD standard </h2>
+										<figure class="txtover1"><img src="images/project1/attrition3.jpg" alt="" />The results of the Pareto NBD standard show an how much purchases and churn are frequent in the onìbserved population. The dropout rate =0.076 , tells us that the average lifertime of a customer is 13.5 days, and that after 15 days from the beginning of the observation period we are left with 50% of the origilal customers.</figure>
+										<figure class="txtover2">The purchase rate =0.089 , is the average probabiliy that an active customer (still alive according to the attrition process) makes a purchase in a day. Both rates are quite low, illustrating how the mobile freemium industry is characterized by very high abandon rate and non- frequent puchases. <img src="images/project1/transactional3.jpg" alt="" /></figure><br>
+										The predictions of the model can employed in diffrent ways. In the study it is observed how accurate predictions are at the aggregate and the individual level. The observed dataset consist of 581 customers and the MAE (mean absolute error) of the Pareto NBD is =4.27, while the total residuals is =0.52. This highlight the good in-saple fit of the model and that it can successfully be employed to evaluate the profitability of a certain customer base as the image below shows.<br><br>
+										<figure class="centerimg"><img src="images/project1/paretonbdstd3.png" alt="" /></figure> <br>
+										<figure class="txtover2"><img src="images/project1/paretonbdstd4.png" alt="" />A good predictive power is also observed in individual level  spending predictions. This application is especially important when performing tageted marketing campaigns, where only the most profitable customers want to be reached. The plot below compare the predicted number of purchases in the holdout period given the number of transactions done in the calibration period.</figure> <br>
+										Finally, the model is employed for a classification task, to detect top spending customers. Here, the obseved units are divided in non top-spending and top-spending. The results yielded by the model depend on the % of costumers that wants to be reached, the best results are observed when we try to identify the top 5% of spending clients. The hit rate (or precision) is =0.56. This means that the model can spot 56% of these most valuable clients.<br> <br>
+										In terms of out-of-sample performance, the computed Pareto NBD Standard yield surprising results. The MAE is even lower when predictions are made on an external sample.<br> <br>
+										<h2>Pareto NBD with covariates </h2>
+										The improvement of the model when accounting for the covariates are not significant. This negative results is very likely observed because an important assumption of the covariates is not respected in thos case stusy. The assumption is that the covariates remain constant between the calibration and validation period. Since the control variables that are considered include playing behaviors, such as time spent on the game or number of session during a week, these are very likely to change across the observed period.<br><br>
+										<figure class="txtover2"><img src="images/project1/paretonbdcov1.png" alt="" />As the plaot shows when including the covariates in the model the performance of the model worsen. The predicted number of purchases is overestimated, and the MAE is higher then the one of the Pareto NBD Standard.
+										</p>
 									</div>
 								</div>
 							</article>
 							<!-- END MODAL BOX -->
 							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<img src="images/thumbs/02.jpg" alt="" class="modalThumbnail" onclick="openModal('modal2')"/>
+								<img src="images/section2/e-book1.jpg" alt="" class="modalThumbnail" onclick="openModal('modal2')"/>
 								<h3>Web scraping e-books from Bol.com</h3>
 								<p>(Python: Selenium, Pandas)</p>
 								<!-- Modal -->
@@ -70,40 +87,43 @@
 									<div class="modal-content">
 										<h2>Inspecting the e-books market via web scraping on Bol.com<span class="close" onclick="closeAllModal()">&times;</span></h2>
 										<img src="images/thumbs/02.jpg" alt="" />
-										<p>Some text in the Modal...</p>
-										<p>Some text in the Modal...</p>
+										<p>We are experiencing an exceptionally high number of requests.<br>
+										Please, come back to this page after some time.
+										</p>
 									</div>
 								</div>
 							</article>
 							<!-- END MODAL BOX -->
 							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<img src="images/thumbs/03.jpg" alt="" class="modalThumbnail" onclick="openModal('modal3')"/>
-								<h3>Ultricies lacinia interdum3</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<img src="images/section2/airbnb1.jpg" alt="" class="modalThumbnail" onclick="openModal('modal3')"/>
+								<h3>Airbnb neighbourhood market price estimation</h3>
+								<p>(RStudio, Shiny app)</p>
 								<!-- Modal -->
 								<div id="modal3" class="modal">
 									<div class="modal-content">
 										<h2>Ultricies lacinia interdum 3<span class="close" onclick="closeAllModal()">&times;</span></h2>
 										<img src="images/thumbs/03.jpg" alt="" />
-										<p>Some text in the Modal...</p>
-										<p>Some text in the Modal...</p>
+										<p>We are experiencing an exceptionally high number of requests.<br>
+										Please, come back to this page after some time.
+										</p>
 									</div>
 								</div>
 							</article>
 							<!-- END MODAL BOX -->
 							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<img src="images/thumbs/04.jpg" alt="" class="modalThumbnail" onclick="openModal('modal4')"/>
-								<h3>Ultricies lacinia interdum4</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<img src="images/section2/cluster1.jpg" alt="" class="modalThumbnail" onclick="openModal('modal4')"/>
+								<h3>Food retailer, survey and cluster analysis</h3>
+								<p>(RStudio, qualtrics)</p>
 								<!-- Modal -->
 								<div id="modal4" class="modal">
 									<div class="modal-content">
 										<h2>Ultricies lacinia interdum 4<span class="close" onclick="closeAllModal()">&times;</span></h2>
 										<img src="images/thumbs/04.jpg" alt="" />
-										<p>Some text in the Modal...</p>
-										<p>Some text in the Modal...</p>
+										<p>We are experiencing an exceptionally high number of requests.<br>
+										Please, come back to this page after some time.
+										</p>
 									</div>
 								</div>
 							</article>
@@ -118,7 +138,7 @@
 						<div class="row">
 							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
-								<img src="images/thumbs/01.jpg" alt="" class="modalThumbnail" onclick="openModal('modal1')"/>
+								<img src="images/section2/art1.jpg" alt="" class="modalThumbnail" onclick="openModal('modal1')"/>
 								<h3>Customer Lifetime Value in mobile gaming</h3>
 								<p>(SQL, RStudio)</p>
 								<!-- Modal -->
@@ -126,8 +146,9 @@
 									<div class="modal-content">
 										<h2>MSc thesis<br> Customer Lifetime Value prediction in mobile freemium games. The Introduction user information and game specific covariates<span class="close" onclick="closeAllModal()">&times;</span></h2>
 										<img src="images/thumbs/01.jpg" alt="" />
-										<p>Some text in the Modal...</p>
-										<p>Some text in the Modal...<br>
+										<p>We are experiencing an exceptionally high number of requests.<br>
+										Please, come back to this page after some time.
+										</p>
 										Other text</p>
 									</div>
 								</div>
@@ -525,6 +546,26 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					</ul>
 				</div>
 			</footer>  -->
+			
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/lorenzo-taddei" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="https://github.com/lorenzotaddei"class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+						<!-- <li><a href="MAILTO:lorenzo.taddei@outlook.it" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+						<li>Open <a href="images/cv/cv.pdf"> Resume</a></li>
+	
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>  			
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

@@ -2689,9 +2689,9 @@ input, select, textarea {
 	}
 
 		#main > section {
-			border-top: solid 2px #efefef;
-			margin: 4em 0 0 0;
-			padding: 4em 0 0 0;
+			border-top: solid 2px #e4eae9;
+			margin: 2em 0 0 0;
+			padding: 3em 0 0 0;
 		}
 
 			#main > section:first-child {
@@ -3224,6 +3224,17 @@ input, select, textarea {
 	cursor: pointer;
 	width: 100%;
 }
+
+#two img{
+	max-width: 92%;
+	opacity: 1;
+}
+
+#three img{
+	max-width: 92%;
+	opacity: 1;
+}
+
 	
 /* The Modal (background) */
 .modal {
@@ -3267,5 +3278,37 @@ input, select, textarea {
 .modal-content p {
 	margin-top: 15px;
 	font-size: 1em;
+}
+
+.modal-content img {
+	max-width: 50px;
+}
+
+.txtover1 {
+	display: grid;
+	align-items: center; 
+	grid-template-columns: 0.6fr 1fr;
+	column-gap: 5px;
+} 
+
+.txtover2 {
+	display: grid;
+	align-items: center; 
+	grid-template-columns: 1fr 0.65fr;
+	column-gap: 5px;
+} 
+
+.centerimg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+.txtover3 {
+	display: grid;
+	align-items: center; 
+	grid-template-columns: 1fr 0.65fr;
+	column-gap: 5px;
 }
 
