@@ -2689,7 +2689,7 @@ input, select, textarea {
 	}
 
 		#main > section {
-			border-top: solid 2px #e4eae9;
+			border-top: solid 2px #cdd2d1;
 			margin: 2em 0 0 0;
 			padding: 3em 0 0 0;
 		}
@@ -3280,8 +3280,9 @@ input, select, textarea {
 	font-size: 1em;
 }
 
+/* somehow only affect resume */
 .modal-content img {
-	max-width: 50px;
+	max-width: 90%;
 }
 
 .txtover1 {
@@ -3312,3 +3313,9 @@ input, select, textarea {
 	column-gap: 5px;
 }
 
+.centerimg2 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
