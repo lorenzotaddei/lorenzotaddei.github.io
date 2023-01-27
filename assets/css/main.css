@@ -3319,3 +3319,9 @@ input, select, textarea {
 	margin-right: auto;
 	width: 100%;
 }
+
+.txtover4 {
+	display: grid;
+	align-items: center; 
+	grid-template-columns: 1fr 0.4fr;
+	column-gap: 5px;
