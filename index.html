@@ -89,8 +89,8 @@
 										<p>The e-book market has significantly grown in recent years, with more and more readers opting for digital versions of their favorite books. The advantages of e-books include their accessibility, portability, and low costs. From the authors’ point of view, e-books provide opportunities to reach a wider audience and create generate higher profits due to the lack of printing costs. Given the potential of the e-book market, it is essential to stay up-to-date on market trends and customer preferences.<br><br>
 										The goal of this project is to provide authors and publishers with up-to-date information regarding e-books. More specifically, I built a web scraper that gathers important information on all e-books for kids available on the website Bol.com. The goal of this project was to extract data such as price, topics, number of pages, languages, and other relevant details, which could then be used by writers to create e-books in the ideal format.<br><br>
 										To accomplish this, I used a web scraping tool to navigate the website and extract the desired information from the e-book listings of Bol.com. The screenshot below shows the information available on the main navigation page of kids’ e-books. Various insights can already be extracted from this page such as: <br><br>
-										<figure class="txtover4"><img src="images/project2/Bol.com1.jpg" alt="" />- Price <br>- reviews<br>- Language<br>- Number of pages<br>- Other available formats of the book (and respective price)</figure><br>
-										<figure class="txtover2">However, other relevant information had to be extracted from the specific e-book page. This information are shown in the 2nd screenshot (taken from the book page):<br>- Categories<br>- Reading capabilities (devices)<br>- Recommended age of kids<br><img src="images/project2/Bol.com3.jpg" alt="" /></figure>
+										<figure class="txtover4"><img src="images/project2/bol.com1.jpg" alt="" />- Price <br>- reviews<br>- Language<br>- Number of pages<br>- Other available formats of the book (and respective price)</figure><br>
+										<figure class="txtover2">However, other relevant information had to be extracted from the specific e-book page. This information are shown in the 2nd screenshot (taken from the book page):<br>- Categories<br>- Reading capabilities (devices)<br>- Recommended age of kids<br><img src="images/project2/bol.com3.jpg" alt="" /></figure>
 										 To obtain the required data the scraper carried out the following tasks: <br>
 										 - Navigate through all the pages of the category (500 pages)<br>- Collect the links (seed) of all the e-books in each page<br> - Navigate in every link of the seed and extract all the information of interest<br><br>
 										 The information gathered from this project was used by a writer to create an e-book with illustrations for kids, aligned with market trends and customer preferences. The collected dataset may also help to identify areas of opportunity for creating e-books that filled gaps in the market. <br><br>
@@ -107,9 +107,12 @@
 								<!-- Modal -->
 								<div id="modal3" class="modal">
 									<div class="modal-content">
-										<h2>Ultricies lacinia interdum 3<span class="close" onclick="closeAllModal()">&times;</span></h2>
-										<p>We are experiencing an exceptionally high number of requests.<br>
-										Please, come back to this page after some time.
+										<h2>Airbnb neighbourhood market price estimation<span class="close" onclick="closeAllModal()">&times;</span></h2>
+										<p>
+										This project has the goal to build a tool that may be employed by Airbnb hosts to understand the market price of their accommmodation. <br><br>
+										
+										The study employs Airbnb data that refer to Amsterdam listings, where, after cleaning the publicly available dataset, an optimal division of the city in neigbourhoods is carried out. Within each neighbourhood, starting from the existing listings, a Lasso regression (a linear regression that uses shrinkage) is performed. The price of the accomodation is used as a dependent variable. While, the regressors include the various variables that Airbnb display for each listing, such as the number of rooms, data regarding the reviews, the amenities that the house offers, and many others. Running the model on a specific listing yields the market price of it, based on the prices that the competitors of the neighbourhood employ.<br><br>
+										The project is still in progress.The next step is to deploy an app, where one can write the listings specifics and recieve the up-to-date market price.
 										</p>
 									</div>
 								</div>
