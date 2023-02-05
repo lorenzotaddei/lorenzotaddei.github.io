@@ -3269,7 +3269,7 @@ input, select, textarea {
 .modal-content span {
 	float: right;
 	cursor: pointer;
-	font-size: 48px;
+	font-size: 70px;
 }
 .modal-content span:hover {
 	color: #ffffff;
@@ -3325,3 +3325,16 @@ input, select, textarea {
 	align-items: center; 
 	grid-template-columns: 1fr 0.4fr;
 	column-gap: 5px;
+}
+
+/* adding hovering in section 2*/
+
+/* when decreasing opacity here and increasing it in hover it does not work */
+#two #main-image {
+	opacity:1;   
+}
+
+#main-image:hover {
+	opacity:1;
+    transform:scale(1.05);
+}
