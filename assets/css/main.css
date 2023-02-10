@@ -3285,6 +3285,8 @@ input, select, textarea {
 	max-width: 90%;
 }
 
+
+/* txt hovewr are used to put image and text in same row inside of modals */
 .txtover1 {
 	display: grid;
 	align-items: center; 
@@ -3327,6 +3329,13 @@ input, select, textarea {
 	column-gap: 5px;
 }
 
+.txtover5 {
+	display: grid;
+	align-items: center; 
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2px;
+}
+
 /* adding hovering in section 2*/
 
 /* when decreasing opacity here and increasing it in hover it does not work */
@@ -3345,6 +3354,9 @@ input, select, textarea {
     transform:scale(1.04);
 	box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px, rgba(92, 92, 92, 0.23) 0px 0px 0px 4px;
 }
+
+/* This is the one in use 2*/
+
 
 #main-image3:hover {
     opacity:1;
