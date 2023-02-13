@@ -3406,6 +3406,7 @@ input, select, textarea {
 	align-items: center; 
 	column-gap: 5px;
 	display: flex;
+	width:100% ;
 }
 
 .skill {
@@ -3544,7 +3545,14 @@ input, select, textarea {
 	display: flex;
 	display: flex;
     align-content: center;
-    flex-direction: row
+    flex-direction: row;
+	width: 100%;
+}
+
+#three ul{
+	width: 100%;
+	padding-left: 0cm ;
+	padding-right: 3cm;
 }
 
 
@@ -3553,6 +3561,8 @@ input, select, textarea {
 	display: flex;
 	flex-direction: column;
     align-items: center;
+	width: 25%;
+	min-width: 2.1cm;
 }
 
 
