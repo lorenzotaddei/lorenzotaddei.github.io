@@ -3433,11 +3433,11 @@ input, select, textarea {
 	text-align: center;
 	font-size: 15px;
 	border-radius: 10px;
-	height: 0.5cm;
+	height: 0.4cm;
 }
 #three .container2 {
 	background-color: rgb(212, 212, 212);
-	height: 0.5cm;
+	height: 0.4cm;
 	width: 80%;
 	border-radius: 10px;
 }
