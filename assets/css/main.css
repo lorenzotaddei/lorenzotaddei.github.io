@@ -3356,18 +3356,22 @@ input, select, textarea {
 }
 
 /* This is the one in use 2*/
-
-
 #main-image3:hover {
     opacity:1;
     transform:scale(1.06);
 	box-shadow: rgba(47, 47, 47, 0.149) -0.0625em 0.0625em 0.025em, rgba(0, 0, 0, 0.303) -0.0625em 0.125em 0.7em, rgba(217, 217, 217, 0.156) -0.06250px 0px 0px 1px inset;
 }
 
+/* This is the one in use section 4 (skills)*/
+#main-image4:hover {
+    opacity:1;
+    transform:scale(1.1);
+}
 #two #main-image4 {
 	opacity:1;
 	max-width: 90%;
 }
+
 
 
 /* adding text container with click for more*/
@@ -3392,3 +3396,164 @@ input, select, textarea {
   .container:hover .text {
 	display: block;
   }
+
+
+  /* skills section */
+
+#three #section3img {
+	display: grid;
+	max-width: 12cm;
+	align-items: center; 
+	column-gap: 5px;
+	display: flex;
+}
+
+.skill {
+	background-color: rgb(131, 131, 131);
+	color: white;
+	padding: 1%;
+	text-align: center;
+	font-size: 15px;
+	border-radius: 10px;
+	height: 1cm;
+}
+#three .container {
+	background-color: rgb(212, 212, 212);
+	height: 1cm;
+	width: 80%;
+	border-radius: 10px;
+}
+
+ /* without text progression bar*/
+.skill2 {
+	background-color: rgb(149, 149, 149);
+	color: white;
+	padding: 1%;
+	text-align: center;
+	font-size: 15px;
+	border-radius: 10px;
+	height: 0.5cm;
+}
+#three .container2 {
+	background-color: rgb(212, 212, 212);
+	height: 0.5cm;
+	width: 80%;
+	border-radius: 10px;
+}
+
+      
+.python {
+	width: 70%;
+}
+
+.r {
+	width: 95%;
+}
+
+.sql {
+	width: 60%;
+}
+
+.spss {
+	width: 40%;
+}
+
+.excel {
+	width: 85%;
+}
+
+.tableau {
+	width: 50%;
+}
+
+.powerbi {
+	width: 70%;
+}
+
+.html {
+	width: 40%;
+}
+
+.dotpro {
+	height: 10px;
+	width: 10px;
+	background-color: #d2cf1f;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.dotana {
+	height: 10px;
+	width: 10px;
+	background-color: #3986b0;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.dotviz {
+	height: 10px;
+	width: 10px;
+	background-color: #c1642a;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.dotmod {
+	height: 10px;
+	width: 10px;
+	background-color: #58bd3e;
+	border-radius: 50%;
+	display: inline-block;
+  }
+
+  #three h4 {
+	display: inline;
+  }
+
+  #three h3 {
+	display: inline;
+  }
+
+  .singleimg {
+	display: grid;
+	max-width: 14cm;
+	align-items: center; 
+	column-gap: 5px;
+}
+
+#three .column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	line-height:0.7cm;
+}
+
+#three #flag{
+	max-width:2.2cm;
+}
+
+#three #flag2{
+	max-width:2.2cm;
+	opacity:0.8;
+}
+
+/*languages part */
+#three ul.icons {
+	cursor: default;
+	list-style: none;
+	display: flex;
+	display: flex;
+    align-content: center;
+    flex-direction: row
+}
+
+
+#three li{
+	color: #939393;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+
+
