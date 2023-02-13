@@ -3448,27 +3448,27 @@ input, select, textarea {
 }
 
 .r {
-	width: 95%;
+	width: 100%;
 }
 
 .sql {
-	width: 60%;
+	width: 65%;
 }
 
 .spss {
-	width: 40%;
-}
-
-.excel {
-	width: 85%;
-}
-
-.tableau {
 	width: 50%;
 }
 
+.excel {
+	width: 90%;
+}
+
+.tableau {
+	width: 65%;
+}
+
 .powerbi {
-	width: 70%;
+	width: 75%;
 }
 
 .html {
@@ -3478,7 +3478,7 @@ input, select, textarea {
 .dotpro {
 	height: 10px;
 	width: 10px;
-	background-color: #d2cf1f;
+	background-color: #d6cb2d;
 	border-radius: 50%;
 	display: inline-block;
 }
@@ -3486,7 +3486,7 @@ input, select, textarea {
 .dotana {
 	height: 10px;
 	width: 10px;
-	background-color: #3986b0;
+	background-color: #74b2d4;
 	border-radius: 50%;
 	display: inline-block;
 }
@@ -3494,7 +3494,7 @@ input, select, textarea {
 .dotviz {
 	height: 10px;
 	width: 10px;
-	background-color: #c1642a;
+	background-color: #d2936b;
 	border-radius: 50%;
 	display: inline-block;
 }
@@ -3502,7 +3502,7 @@ input, select, textarea {
 .dotmod {
 	height: 10px;
 	width: 10px;
-	background-color: #58bd3e;
+	background-color: #7ac468;
 	border-radius: 50%;
 	display: inline-block;
   }
