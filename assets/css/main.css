@@ -1792,6 +1792,7 @@ input, select, textarea {
 
 	header.major h2 {
 		font-size: 2em;
+		color: #585858;
 	}
 
 /* Form */
@@ -3529,16 +3530,14 @@ input, select, textarea {
 	line-height:0.7cm;
 }
 
+
+
+/*languages part */
+
 #three #flag{
 	max-width:2.2cm;
 }
 
-#three #flag2{
-	max-width:2.2cm;
-	opacity:0.8;
-}
-
-/*languages part */
 #three ul.icons {
 	cursor: default;
 	list-style: none;
