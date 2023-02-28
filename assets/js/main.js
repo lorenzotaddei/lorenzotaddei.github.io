@@ -140,3 +140,58 @@ window.onclick = function(event) {
 	  modal.style.display = "none";
 	}
   }
+
+
+
+
+
+
+
+
+
+
+  // end of the page button 
+
+// select the share-popup element
+const sharePopup = document.getElementById('share-popup');
+
+// select the close button
+const closeBtn = sharePopup.querySelector('.close-btn');
+
+// create a variable to track whether the pop-up has been closed
+let isClosed = false;
+
+// listen for scroll event on window
+window.addEventListener('scroll', () => {
+  // check if the user has scrolled to the bottom of the page and the pop-up hasn't been closed
+  if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight && !isClosed) {
+    // show the share popup
+    sharePopup.style.display = 'block';
+  } else {
+    // hide the share popup
+    sharePopup.style.display = 'none';
+  }
+});
+
+// add click event listener to close button
+closeBtn.addEventListener('click', () => {
+  // hide the share popup
+  sharePopup.style.display = 'none';
+  // set the isClosed variable to true
+  isClosed = true;
+});
+
+// add click event listener to share popup
+sharePopup.addEventListener('click', () => {
+  // copy the current page's URL to the clipboard
+  navigator.clipboard.writeText(window.location.href);
+  
+  // display a confirmation message to the user
+  alert('The website URL has been copied to your clipboard. You can now share it with someone who might be interested. \n\nThank you for the support.');
+  
+  // hide the share popup
+  sharePopup.style.display = 'none';
+  // set the isClosed variable to true
+  isClosed = true;
+});
+

@@ -3566,3 +3566,54 @@ input, select, textarea {
 
 
 
+/*pop up*/
+
+#share-popup {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background-color: #fbf7be;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	display: none;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	animation: pop-up 0.5s ease-in-out forwards;
+  }
+  
+  #share-popup p {
+	font-size: 14px;
+	margin: 0;
+  }
+  
+  #share-popup:hover {
+	background-color: #fdffd3;
+  }
+  
+  #share-popup .close-btn {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #666;
+	opacity: 0;
+  }
+  
+  #share-popup .close-btn:hover {
+	color: #000;
+  }
+  
+  @keyframes pop-up {
+	0% {
+	  opacity: 0;
+	  transform: translateY(-50px);
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
