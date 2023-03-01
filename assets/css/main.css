@@ -3572,7 +3572,7 @@ input, select, textarea {
 	position: fixed;
 	top: 20px;
 	right: 20px;
-	background-color: #fbf7be;
+	background-color: #fffcc3;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 10px;
@@ -3589,7 +3589,7 @@ input, select, textarea {
   }
   
   #share-popup:hover {
-	background-color: #fdffd3;
+	background-color: #fdff98;
   }
   
   #share-popup .close-btn {
