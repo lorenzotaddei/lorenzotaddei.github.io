@@ -17,7 +17,7 @@
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/portrait.png" alt="" /></a>
-					<h1><strong>Lorenzo Taddei</strong>, Data analyst | 
+					<h1><strong>Lorenzo Taddei</strong>, Data Analyst | 
 					Statistics and Marketing background | 
 					MSc Marketing Analytics, Tilburg University</h1>
 				</div>
@@ -48,6 +48,43 @@
 							<h2>Analytics Work</h2>
 						</header>
 						<div class="row">
+							<!-- MODAL BOX -->
+							<article class="col-6 col-12-xsmall work-item">
+								<div id ='hoverimage'>
+								<img src="images/section2/airbnb1.jpg" alt="" class="modalThumbnail" id="main-image3" onclick="openModal('modal3')"/>
+								<h3>Airbnb ideal accommodation price estimation</h3> 
+								<p>(RStudio, Shiny App)</p>
+								<!-- Modal -->
+								<div id="modal3" class="modal">
+									<div class="modal-content"><br>
+										<h1>Airbnb perfect accommodation price estimation<span class="close" onclick="closeAllModal()">&times;</span></h1>
+										<p>
+										This project has the goal to build a tool that may be employed by Airbnb hosts to understand the market price of their accommmodation. <br><br>
+										
+										The study employs Airbnb data that refer to Amsterdam listings, where, after cleaning the publicly available dataset, an analysis that observe which variable are contributing the most in determining the price is carried out. 
+										This feature relevance analysis is performed by observing the individual features contribution of a random forest. The random forest takes as input the most relevant features in the dataset and attempt to estimate the listings' prices from them.
+										<br><br>
+										<figure class="txtover2"><img src="images/airbnbn/feature.png" alt="" style="max-height: 400px;" />The plot on the side shows the most relevant features' contribution to the model. Since the App is designed for hosts that do not have an accomodation yet, the features selected are the one in red.<br></figure>
+										<br>
+
+										By means of the Shyny app server, an app is deployed (find the link below). The app 'Airbnb perfect price' takes as input the features of the accommodation and insert these input as values that feed the Random Forest. 
+										The model computes the price that a host should be charging on Airbnb in order to be perfectly aligned with the competition. <br><br>
+										
+										Explore the app that allows Airbnb hosts to better understand the market and charge fair prices here:<br><br>
+										<p>
+											<ul>
+												<li><a href="/airbnb_app/index.html" style = "font-size: 25px;">Web page </a> that presents the web app, its uses and limitations.</li> <br>
+												<li><a href="https://lorenzotaddei.shinyapps.io/Airbnb_perfect_price/" style = "font-size: 25px;">Web app version 1</a> : Web app to charge perfect prices for new hosts </li><br>
+												<li><a href="https://lorenzotaddei.shinyapps.io/airbnb_perfect_price2/" style = "font-size: 25px;">Web app version 2</a> : Web app to charge perfect for users that already have a listing </li>
+											</ul>
+										
+										<p>This app is created with Shiny app: an R package that allows to build interactive web apps straight from R.<a href= images/certifications/Shiny.pdf> Shiny App course certificate</a> . <br><br>
+										</p>
+									</div>
+								</div>
+								</div>
+							</article>
+							<!-- END MODAL BOX -->
 							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
 								<div id ='hoverimage'>
@@ -106,31 +143,7 @@
 								</div>
 								</div>
 							</article>
-							<!-- END MODAL BOX -->
-							<!-- MODAL BOX -->
-							<article class="col-6 col-12-xsmall work-item">
-								<div id ='hoverimage'>
-								<img src="images/section2/airbnb1.jpg" alt="" class="modalThumbnail" id="main-image3" onclick="openModal('modal3')"/>
-								<h3>Airbnb neighbourhood market price estimation</h3>
-								<p>(RStudio, Shiny App)</p>
-								<!-- Modal -->
-								<div id="modal3" class="modal">
-									<div class="modal-content"><br>
-										<h2>Airbnb neighbourhood market price estimation<span class="close" onclick="closeAllModal()">&times;</span></h2>
-										<p>
-										This project has the goal to build a tool that may be employed by Airbnb hosts to understand the market price of their accommmodation. <br><br>
-										
-										The study employs Airbnb data that refer to Amsterdam listings, where, after cleaning the publicly available dataset, an optimal division of the city in neigbourhoods is carried out. Within each neighbourhood, starting from the existing listings, a Lasso regression (a linear regression that uses shrinkage) is performed. The price of the accomodation is used as a dependent variable. While, the regressors include the various variables that Airbnb display for each listing, such as the number of rooms, data regarding the reviews, the amenities that the house offers, and many others. Running the model on a specific listing yields the market price of it, based on the prices that the competitors of the neighbourhood of interest.<br><br>
-										The project is still in progress and the model is being deployed. Meanwhile, the link below redirects you to the interactive web app at its current state.<br><br>
-										<a href="https://lorenzotaddei.shinyapps.io/airbnb_prices/" Airbnb prices in Amsterdam>Airbnb prices in Amsterdam</a><br><br>
-										Shiny app is an R package that makes it easy to build interactive web apps straight from R.<a href= images/certifications/Shiny.pdf> Shiny App</a> certificate. <br><br>
-										</p>
-									</div>
-								</div>
-								</div>
-							</article>
-							<!-- END MODAL BOX -->
-							<!-- MODAL BOX -->
+							<!-- END MODAL BOX -->							<!-- MODAL BOX -->
 							<article class="col-6 col-12-xsmall work-item">
 								<div id ='hoverimage'>
 								<img src="images/section2/MCA.jpg" alt="" class="modalThumbnail" id="main-image3" onclick="openModal('modal4')"/>
@@ -717,7 +730,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								<div class="modal-content">
 									<h1>Curriculum Vitae<span class="close" onclick="closeAllModal()">&times;</span></h1> <br>
 									<figure class="resume"><img src="images/cv/CV.jpg" alt="" /></figure> <br>
-									<a href="images/cv/CV.pdf" > Click here to download the PDF </a><br><br>
+									<h2><a href="images/cv/CV.pdf" > Click here to download the PDF </a></h2><br><br>
 
 								</div>
 							</div>
