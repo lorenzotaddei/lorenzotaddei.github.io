@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^$ airbnb_app/index.html [L]
