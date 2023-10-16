@@ -4688,3 +4688,34 @@ input, select, textarea {
 
 	}
 
+	.image-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	.image-item {
+		flex-basis: calc(50% - 10px); /* 10px for the gap between images */
+		margin-bottom: 20px; /* Adjust as needed for spacing between rows */
+	}
+	
+	.image-item img {
+		width: 100%;
+		height: auto;
+		border: 1px solid #6d6c6c;
+	}
+	
+	/* Media query for small screens */
+	@media screen and (max-width: 768px) {
+		.image-item {
+			flex-basis: 100%; /* One image per row on small screens */
+		}
+		
+		.image-item img {
+			width: 75%; /* Make the images 75% of their original size */
+		}
+	}
+	
+	
+	
+
