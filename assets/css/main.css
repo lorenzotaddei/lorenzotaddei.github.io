@@ -3618,3 +3618,12 @@ input, select, textarea {
 	}
   }
   
+
+.summary-h2 {
+	color: #5d5d5d;        /* dark grey */
+	font-size: 1.3em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	line-height: 1.5em;
+	cursor: pointer; 
+	}
