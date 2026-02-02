@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EcoPlay App</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ScART">
+    <link rel="apple-touch-icon" href="icon.png">
+
+
+</head>
+<body>
+
+    <main id="app">
+        <section id="about" class="page active">
+            <div class="content-card">
+                <h1>ScART</h1>
+                <div class="text-block">
+                    <h2>DI COSA SI TRATTA</h2>
+                    <p>Questa app aiuta genitori e bambini a trasformare gli imballaggi alimentari di tutti i giorni in semplici giochi e attività creative. Niente schermi, niente acquisti: solo ciò che hai già in casa.</p>
+                </div>
+                <div class="text-block">
+                    <h2>COME FUNZIONA</h2>
+                    <ol>
+                        <li><strong>Scansiona</strong> un imballaggio (bottiglia, scatola, vasetto…)</li>
+                        <li><strong>Scegli</strong> una creazione adatta all’età</li>
+                        <li><strong>Segui</strong> le istruzioni passo dopo passo e gioca insieme</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="scan" class="page">
+            <div class="content-card">
+                <div class="camera-container">
+                    <video id="webcam" autoplay playsinline></video>
+                    <div class="scan-overlay"></div>
+                    <div id="camera-error" class="error-msg">Tocca per attivare la camera</div>
+                </div>
+                <button class="action-btn" onclick="startCamera()">ATTIVA FOTOCAMERA</button>
+                <p class="scan-instruction">Inquadra l'imballaggio per sbloccare nuove idee!</p>
+            </div>
+        </section>
+
+        <section id="creazioni" class="page">
+            <div class="content-card">
+                <h1>Creazioni</h1>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" onclick="toggleAccordion(this)">
+                        LE MIE CREAZIONI <span>▼</span>
+                    </h2>
+                    <div class="accordion-content">
+                        <ul class="creation-list">
+                            <li>
+                                <span class="item-name">Casetta per gli uccelli</span>
+                                <span class="item-date">12 Gennaio 2026</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Memory Pasta</span>
+                                <span class="item-date">18 Gennaio 2026</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Treno cartoni di latte</span>
+                                <span class="item-date">24 Gennaio 2026</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" onclick="toggleAccordion(this)">
+                        LE CREAZIONI DI ALTRI <span>▼</span>
+                    </h2>
+                    <div class="accordion-content">
+                        <ul class="simple-list">
+                            <li>Nuove creazioni del mese</li>
+                            <li>Le mie creazioni preferite</li>
+                            <li>Cerca tra tutte le creazioni</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-target="about">
+            <span class="icon">ℹ️</span>
+            <span class="label">About</span>
+        </button>
+        <button class="nav-item" data-target="scan">
+            <span class="icon">📷</span>
+            <span class="label">Scan</span>
+        </button>
+        <button class="nav-item" data-target="creazioni">
+            <span class="icon">🎨</span>
+            <span class="label">Creazioni</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

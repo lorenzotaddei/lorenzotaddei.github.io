@@ -1,0 +1,266 @@
+/* Palette Colori Caldi */
+:root {
+    --bg-main: #FDF5E6;     /* Crema caldo */
+    --card-bg: #FFFFFF;
+    --primary: #E67E22;     /* Arancio caldo */
+    --accent: #FFD97D;      /* Giallo pastello */
+    --text-dark: #5D4037;   /* Marrone scuro */
+    --nav-bg: #5D4037;      /* Navigazione scura per contrasto serio */
+    --nav-inactive: #A69080;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    /* Font arrotondati di sistema */
+    font-family: ui-rounded, 'Hiragino Kaku Gothic ProN', Quicksand, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#app {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 110px; /* Spazio extra per la nav galleggiante */
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* Card */
+.content-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.1);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+}
+
+/* Titoli H2 come rettangoli colorati */
+h2 {
+    display: inline-block;
+    font-size: 0.85rem;
+    background-color: var(--accent);
+    color: var(--text-dark);
+    padding: 6px 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.text-block {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+p, li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #6d544b;
+}
+
+ol { padding-left: 20px; }
+
+/* Navigazione Galleggiante */
+.bottom-nav {
+    position: fixed;
+    bottom: 25px; /* Distanza dal fondo */
+    left: 20px;
+    right: 20px;
+    height: 75px;
+    background: var(--nav-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px; /* Molto arrotondata */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    height: 55px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--nav-inactive);
+    transition: all 0.3s ease;
+    border-radius: 18px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Highlight Totale (Icona + Testo) */
+.nav-item.active {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.icon { 
+    font-size: 1.3rem; 
+    margin-bottom: 2px;
+}
+
+.label { 
+    font-size: 0.7rem; 
+    font-weight: 700; 
+    text-transform: uppercase;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stilizzazione Accordion */
+.accordion-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--bg-main);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.accordion-header span {
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+}
+
+.accordion-item.open .accordion-header span {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    display: none; /* Nascosto di default */
+    padding: 10px 5px 20px 5px;
+    animation: fadeIn 0.3s ease;
+}
+
+.accordion-item.open .accordion-content {
+    display: block;
+}
+
+/* Liste dentro le creazioni */
+.creation-list, .simple-list {
+    list-style: none;
+    padding: 0;
+}
+
+.creation-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--accent);
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.item-date {
+    font-size: 0.75rem;
+    color: var(--nav-inactive);
+    margin-top: 4px;
+}
+
+.simple-list li {
+    padding: 12px 0;
+    color: var(--primary);
+    font-weight: 600;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* CSS per la telecamera */
+.camera-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Proporzione classica fotocamera */
+    background: #333;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent);
+}
+
+#webcam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Riempie il rettangolo senza distorcere */
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.error-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 80%;
+}
+
+.action-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+    margin-bottom: 15px;
+}
