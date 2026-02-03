@@ -108,12 +108,12 @@ function mostraRisultato(codice) {
     if (prodottiEsempio[codice]) {
         const p = prodottiEsempio[codice];
         resDiv.style.backgroundColor = "var(--accent)";
-        resDiv.innerHTML = `🌟 TROVATO: ${p.nome}<br>✨ IDEA: ${p.idea}`;
+        resDiv.innerHTML = `PRODOTTO RILEVATO: ${p.nome}<br> IDEA: ${p.idea}`;
         
         // Vibrazione di successo
         if (navigator.vibrate) navigator.vibrate([50, 30, 50]);
     } else {
         resDiv.style.backgroundColor = "#f0f0f0";
-        resDiv.innerHTML = `Codice: ${codice}<br>Prodotto non trovato... usa la fantasia!`;
+        resDiv.innerHTML = `Codice: ${codice}<br>Prodotto non riconosciuto... inserisci il tuo prodotto manualmente!`;
     }
 }
