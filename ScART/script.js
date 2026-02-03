@@ -76,14 +76,14 @@ const prodottiEsempio = {
 let html5QrCode;
 
 async function iniziaScansione() {
-    // Se lo scanner è già attivo, non fare nulla
     if (html5QrCode && html5QrCode.isScanning) return;
 
     html5QrCode = new Html5Qrcode("reader");
+    
     const config = { 
-        fps: 10, 
-        qrbox: { width: 250, height: 150 }, // Area di scansione per codici a barre (rettangolare)
-        aspectRatio: 1.333334 
+        fps: 20, // Più fluido
+        qrbox: { width: 250, height: 150 },
+        // Rimuoviamo l'aspectRatio fisso per lasciare che Safari usi quello naturale del sensore
     };
 
     try {
@@ -91,13 +91,15 @@ async function iniziaScansione() {
             { facingMode: "environment" }, 
             config,
             (decodedText) => {
-                // Azione quando trova un codice
                 mostraRisultato(decodedText);
             }
         );
-        document.getElementById('scan-btn').style.display = 'none'; // Nascondi bottone dopo avvio
+
+        // Nascondiamo solo il tasto di avvio, lasciamo quello manuale
+        document.getElementById('scan-btn').style.display = 'none';
+
     } catch (err) {
-        alert("Errore fotocamera: " + err);
+        alert("Controlla i permessi della fotocamera nelle impostazioni di Safari.");
     }
 }
 
