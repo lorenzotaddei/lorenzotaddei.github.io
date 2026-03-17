@@ -3628,3 +3628,13 @@ input, select, textarea {
 	line-height: 1.5em;
 	cursor: pointer; 
 	}
+
+	.summary-h1 {
+	color: #6e6e6e;        /* dark grey */
+	font-size: 1.65em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	margin-left: 2em;
+	line-height: 1.5em;
+	cursor: pointer; 
+	}
