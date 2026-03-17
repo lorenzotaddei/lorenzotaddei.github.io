@@ -1,0 +1,566 @@
+/* === PALETTE COLORI === */
+:root {
+    --bg-main: #FDF5E6;     /* Crema caldo */
+    --card-bg: #FFFFFF;
+    --primary: #E67E22;     /* Arancio caldo */
+    --accent: #FFD97D;      /* Giallo pastello */
+    --text-dark: #5D4037;   /* Marrone scuro */
+    --nav-bg: #5D4037;      /* Navigazione scura */
+    --nav-inactive: #A69080;
+}
+
+/* === RESET E BASE === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: ui-rounded, 'Hiragino Kaku Gothic ProN', Quicksand, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#app {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 110px;
+}
+
+/* === STRUTTURA PAGINE === */
+.page {
+    display: none;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === CARD E TESTI === */
+.content-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.1);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+}
+
+h2 {
+    display: inline-block;
+    font-size: 0.85rem;
+    background-color: var(--accent);
+    color: var(--text-dark);
+    padding: 6px 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.text-block {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+p, li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #6d544b;
+}
+
+ol { padding-left: 20px; }
+
+/* === TELECAMERA E SCANNER === */
+.camera-container {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    aspect-ratio: 4 / 3;
+    background: #000;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#webcam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+#reader {
+    width: 100% !important;
+    border: none !important;
+}
+
+#reader video {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: contain !important;
+    border-radius: 20px;
+}
+
+/* === BOTTONI E AZIONI === */
+.action-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+    margin-bottom: 15px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.action-btn.half {
+    flex: 1;
+    font-size: 0.8rem;
+    padding: 12px 2px;
+}
+
+.ready-main {
+    background-color: #27ae60 !important;
+    border: 3px solid #2ecc71;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.secondary-btn {
+    background: none;
+    border: 2px dashed var(--nav-inactive);
+    color: var(--nav-inactive);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.action-btn.secondary {
+    background: var(--nav-bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === FEEDBACK E RISULTATI === */
+.result-badge {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-dark);
+    background-color: var(--accent);
+    border: 2px solid var(--primary);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.action-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.choice-btn {
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.choice-btn.add { background-color: #27ae60; }
+.choice-btn.cancel { background-color: #e74c3c; }
+
+/* === NAVIGAZIONE === */
+.bottom-nav {
+    position: fixed;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    height: 75px;
+    background: var(--nav-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    height: 55px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--nav-inactive);
+    transition: all 0.3s ease;
+    border-radius: 18px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.icon { 
+    font-size: 1.3rem; 
+    margin-bottom: 2px;
+}
+
+.label { 
+    font-size: 0.7rem; 
+    font-weight: 700; 
+    text-transform: uppercase;
+}
+
+/* === MODALI === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--bg-main);
+    margin: 15% auto;
+    padding: 25px;
+    width: 85%;
+    border-radius: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* === LISTE E COMPONENTI SPECIFICI === */
+.view-list-btn {
+    background: var(--accent);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    align-self: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--bg-main);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.accordion-header span {
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+}
+
+.accordion-item.open .accordion-header span {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px 5px 20px 5px;
+}
+
+.accordion-item.open .accordion-content {
+    display: block;
+}
+
+.creation-list, .simple-list {
+    list-style: none;
+    padding: 0;
+}
+
+.creation-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--accent);
+    cursor: pointer;
+}
+
+.creation-list li:active { background: #fdf5e6; }
+
+.item-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.item-date {
+    font-size: 0.75rem;
+    color: var(--nav-inactive);
+    margin-top: 4px;
+}
+
+.simple-list li {
+    padding: 12px 0;
+    color: var(--primary);
+    font-weight: 600;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+#lista-prodotti-ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#lista-prodotti-ul li {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--primary);
+}
+
+.db-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.db-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    flex: 1;
+    margin-right: 10px;
+}
+
+.btn-add-small {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-add-small:active { transform: scale(0.95); }
+
+.setup-section { margin: 20px 0; text-align: left; }
+
+.styled-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid var(--accent);
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checklist label {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.project-card {
+    background: white;
+    border: 3px solid var(--accent);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.project-card:active { background: var(--accent); }
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 15px 0;
+}
+
+
+/* Stili specifici per la lista manuale a categorie */
+#database-manuale-ul .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#database-manuale-ul .accordion-header:active {
+    background: var(--accent) !important;
+}
+
+#database-manuale-ul .db-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #eee;
+}
+
+.btn-add-small {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Gestione drop-down Database Manuale */
+.accordion-item.open .accordion-content {
+    display: block !important;
+}
+
+.accordion-item.open .accordion-header span {
+    transform: rotate(180deg);
+}
+
+.btn-add-small {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+
+.simple-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.simple-list li:active {
+    background-color: #f0f0f0;
+}
+
+.accordion-item.open .accordion-content {
+    display: block !important;
+}

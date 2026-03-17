@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScART - Riciclo Creativo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon.png">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+
+    <main id="app">
+        <section id="about" class="page active">
+            <div class="content-card">
+                <h1>ScART for play</h1>
+                <div class="text-block">
+                    <h2>DI COSA SI TRATTA</h2>
+                    <p>Questa app aiuta genitori e bambini a trasformare gli imballaggi alimentari di tutti i giorni in semplici giochi e attività creative. Niente schermi, niente acquisti: solo ciò che hai già in casa.</p>
+                </div>
+                <div class="text-block">
+                    <h2>COME FUNZIONA</h2>
+                    <ol>
+                        <li><strong>Scansiona</strong> un imballaggio (o inseriscilo manualmente)</li>
+                        <li><strong>Scegli</strong> una creazione adatta all’età di chi deve giocare</li>
+                        <li><strong>Segui</strong> le istruzioni passo dopo passo e <strong>crea il tuo gioco</strong></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="scan" class="page">
+            <button class="view-list-btn" onclick="apriModaleLista()">🛒 Prodotti selezionati (<span id="count-prodotti">0</span>)</button>
+
+            <div class="content-card">
+                <div class="camera-container">
+                    <div id="reader"></div> 
+                    <div class="scan-overlay"></div>
+                </div>
+                
+                <div class="button-row">
+                    <button class="action-btn half" id="scan-btn" onclick="iniziaScansione()">AVVIA SCANNER</button>
+                    <button class="action-btn secondary half" onclick="apriModaleManuale()">INSERISCI MANUALE</button>
+                </div>
+
+                <button id="btn-ready-scan-page" class="action-btn ready-main" style="display:none; margin-top: 15px;" onclick="apriSetupCostruzione()">✨ SONO PRONTO PER COSTRUIRE!</button>
+
+                <div id="scan-result" class="result-badge" style="display:none;">
+                    <div id="result-text"></div>
+                    <div class="action-choices" id="action-choices" style="display:none;">
+                        <button class="choice-btn add" onclick="confermaAggiunta()">AGGIUNGI</button>
+                        <button class="choice-btn cancel" onclick="annullaScansione()">NON AGGIUNGERE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-lista" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="chiudiModaleLista()">&times;</span>
+                    <h2>LA TUA LISTA</h2>
+                    <ul id="lista-prodotti-ul"></ul>
+                    <p id="empty-msg">Non hai ancora aggiunto prodotti.</p>
+                </div>
+            </div>
+
+            <div id="modal-manuale" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="chiudiModaleManuale()">&times;</span>
+                    <h2>DATABASE PRODOTTI</h2>
+                    <p style="font-size: 0.8rem; margin-bottom: 15px;">Seleziona un prodotto per aggiungerlo:</p>
+                    <ul id="database-manuale-ul"></ul>
+                </div>
+            </div>
+
+            <div id="modal-setup" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="chiudiModale('modal-setup')">&times;</span>
+                    <h2>QUASI PRONTI!</h2>
+                    <div class="setup-section">
+                        <p><strong>Quanti anni ha il bambino?</strong></p>
+                        <select id="eta-bambino" class="styled-select">
+                            <option value="3-5">3-5 anni</option>
+                            <option value="6-8">6-8 anni</option>
+                            <option value="9+">9+ anni</option>
+                        </select>
+                    </div>
+                    <div class="setup-section">
+                        <p><strong>Cosa hai in casa?</strong></p>
+                        <div class="checklist" id="checklist-setup">
+                            <label><input type="checkbox" value="Colla"> Colla</label>
+                            <label><input type="checkbox" value="Forbici"> Forbici</label>
+                            <label><input type="checkbox" value="Scotch"> Scotch</label>
+                            <label><input type="checkbox" value="Pennarelli"> Pennarelli</label>
+                            <label><input type="checkbox" value="Filo"> Filo</label>
+                            <label><input type="checkbox" value="Pinzatrice"> Pinzatrice</label>
+                        </div>
+                    </div>
+                    <button class="action-btn" onclick="mostraProgettiSuggeriti()">VEDI PROGETTI DISPONIBILI</button>
+                </div>
+            </div>
+
+            <div id="modal-progetti" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="chiudiModale('modal-progetti')">&times;</span>
+                    <h2>COSA COSTRUIAMO?</h2>
+                    <div class="project-options">
+                        <button class="project-card" onclick="selezionaProgetto('Casetta per gli uccelli')">🏠 Casetta per gli uccelli</button>
+                        <button class="project-card" onclick="selezionaProgetto('Porta-matite')">✏️ Porta-matite</button>
+                        <button class="project-card" onclick="selezionaProgetto('Super Razzo Space')">🚀 Super Razzo </button>
+                        <button class="project-card" onclick="selezionaProgetto('Set Batteria Riciclata')">🥁 Set Batteria Riciclata</button>
+                        <button class="project-card" onclick="selezionaProgetto('Maschera da Eroe')">🎭 Maschera da Eroe</button>
+                        <button class="project-card" onclick="selezionaProgetto('Scudo del Cavaliere')">🛡️ Scudo del Cavaliere</button>
+                        <button class="project-card" onclick="selezionaProgetto('Salvadaio Elefante')">🐘 Salvadanaio</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="creazioni" class="page">
+            <div class="content-card">
+                <h1>Creazioni</h1>
+
+                <div class="accordion-item open">
+                    <h2 class="accordion-header" onclick="toggleAccordion(this)">
+                        LE MIE CREAZIONI <span>▼</span>
+                    </h2>
+                    <div class="accordion-content">
+                        <ul class="creation-list" id="main-creation-list"></ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" onclick="toggleAccordion(this)">
+                        LE CREAZIONI DI ALTRI <span>▼</span>
+                    </h2>
+                    <div class="accordion-content">
+                        <ul class="simple-list">
+                            <li onclick="apriInfoAltri('Nuove creazioni del mese')">Nuove creazioni del mese</li>
+                            <li onclick="apriInfoAltri('Le mie creazioni preferite')">Le mie creazioni preferite</li>
+                            <li onclick="apriInfoAltri('Cerca tra tutte le creazioni')">Cerca tra tutte le creazioni</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-dettaglio" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="chiudiModale('modal-dettaglio')">&times;</span>
+                    <h2 id="det-titolo">Dettaglio Progetto</h2>
+                    <p><small id="det-data"></small></p>
+                    <hr>
+                    <div class="setup-section">
+                        <p><strong>Materiali riciclati usati:</strong></p>
+                        <p id="det-prodotti" style="color:var(--primary); font-weight:bold;"></p>
+                    </div>
+                    <div class="setup-section">
+                        <p><strong>Modifica Età:</strong></p>
+                        <select id="det-eta" class="styled-select">
+                            <option value="3-5">3-5 anni</option>
+                            <option value="6-8">6-8 anni</option>
+                            <option value="9+">9+ anni</option>
+                        </select>
+                    </div>
+                    <div class="setup-section">
+                        <p><strong>Utensili extra disponibili:</strong></p>
+                        <div class="checklist" id="det-utensili"></div>
+                    </div>
+                    <button class="action-btn" onclick="salvaModificheDettaglio()">SALVA MODIFICHE</button>
+                </div>
+            </div>
+
+            <div id="modal-altri" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="chiudiModale('modal-altri')">&times;</span>
+                    <h2 id="altri-titolo">Titolo</h2>
+                    <p style="margin-top:20px; text-align:center;">Qui non c'è ancora nulla.</p>
+                    <button class="action-btn" style="margin-top:20px;" onclick="chiudiModale('modal-altri')">OK</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-target="about"><span class="icon">ℹ️</span><span class="label">About</span></button>
+        <button class="nav-item" data-target="scan"><span class="icon">📷</span><span class="label">Scan</span></button>
+        <button class="nav-item" data-target="creazioni"><span class="icon">🎨</span><span class="label">Creazioni</span></button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
