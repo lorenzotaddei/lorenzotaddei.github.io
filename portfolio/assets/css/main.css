@@ -3563,6 +3563,10 @@ input, select, textarea {
     align-items: center;
 	width: 25%;
 	min-width: 2.1cm;
+	text-align: center;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 
